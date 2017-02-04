@@ -32,10 +32,78 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
+    .state('app', {
+    url: '/app',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/menu.html'
+  })
+
+  .state('app.dashboard',{
+    url: '/dashboard',
+    views: {
+      'menuContent':{
+        templateUrl: 'templates/dashboard.html'
+      }
+    }
+  })
+
+  .state('app.basic-list',{
+    url: '/basic-list',
+    views:{
+      'menuContent':{
+        templateUrl: 'templates/basic-list.html',
+        controller: 'BasicListCtrl'
+      }
+    }
+  })
+
+  .state('app.list-dividers',{
+    url: '/list-dividers',
+    views:{
+      'menuContent':{
+        templateUrl: 'templates/list-dividers.html',
+        controller: 'ListDividersCtrl'
+      }
+    }
+  })
+
+  .state('app.list-headers',{
+    url:'/list-headers',
+    views:{
+      'menuContent':{
+        templateUrl: 'templates/list-headers.html',
+        controller: 'ListHeadersCtrl'
+      }
+    }
+  })
+
+  .state('app.icon-list',{
+    url: '/icon-list',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/icon-list.html'
+      }
+    }
+  })
+
+  .state('app.avatar-list',{
+    url: '/avatar-list',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/avatar-list.html',
+        controller: 'AvatarListCtrl'
+      }
+    }
+  })
+
+  .state('app.sliding-list',{
+    url: '/sliding-list',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/sliding-list.html',
+        controller: 'SlidingListCtrl'
+      }
+    }
   })
 
   // Each tab has its own nav history stack:
@@ -43,7 +111,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.dash', {
     url: '/dash',
     views: {
-      'tab-dash': {
+      'menuContent': {
         templateUrl: 'templates/tab-dash.html',
         controller: 'DashCtrl'
       }
@@ -80,6 +148,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/app/dashboard');
 
 });

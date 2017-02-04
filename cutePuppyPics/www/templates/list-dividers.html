@@ -1,0 +1,8 @@
+<ion-view view-title="List Dividers">
+  <ion-content>
+    <ion-item-group ng-repeat="item in items">
+      <ion-item-divider color="light">{{item.groupname}}</ion-item-divider>
+      <ion-item ng-repeat="groupitem in item.group">{{groupitem}}</ion-item>
+    </ion-item-group>
+  </ion-content>
+</ion-view>

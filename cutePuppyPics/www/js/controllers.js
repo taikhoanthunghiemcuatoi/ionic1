@@ -1,5 +1,25 @@
 angular.module('starter.controllers', [])
 
+.controller('BasicListCtrl',function($scope){
+  $scope.items = items;
+})
+
+.controller('ListDividersCtrl',function($scope){
+  $scope.items = itemsForListDividers;
+})
+
+.controller('ListHeadersCtrl',function($scope){
+  $scope.items = itemsForListHeaders;
+})
+
+.controller('AvatarListCtrl',function($scope){
+  $scope.items = itemsForAvatarList;
+})
+
+.controller('SlidingListCtrl',function($scope){
+  $scope.items = itemsForAvatarList;
+})
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {

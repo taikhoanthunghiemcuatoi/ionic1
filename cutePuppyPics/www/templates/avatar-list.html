@@ -1,0 +1,15 @@
+<ion-view view-title="Avatar List">
+  <ion-content class="list-avatar-page">
+    <ion-list ng-repeat="item in items">
+      <ion-list-header>{{item.groupname}}</ion-list-header>
+      <ion-item ng-repeat="groupitem in item.group">
+        <ion-avatar item-left>
+          <img src="{{groupitem.img}}">
+        </ion-avatar>
+        <h2>{{groupitem.text1}}</h2>
+        <p>{{groupitem.text2}}</p>
+        <ion-note item-right>{{groupitem.time}}</ion-note>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
